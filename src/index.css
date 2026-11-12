@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* light: applies only in the light theme, e.g. light:border */
+@custom-variant light (&:where([data-theme='light'], [data-theme='light'] *));
+
 @font-face {
   font-family: 'JetBrains Mono';
   font-weight: 400;
