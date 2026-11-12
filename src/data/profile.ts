@@ -34,3 +34,5 @@ export const windows = [
   { key: 5, id: "runs" },
   { key: 6, id: "contact" },
 ] as const;
+
+export const githubRepo = (name: string) => `${profile.github}/${name}`;

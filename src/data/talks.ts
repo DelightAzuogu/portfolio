@@ -1,5 +1,6 @@
-import type { PhotoSrc } from '../components/Photo'
 import { photos } from './photos'
+import { thesis } from './thesis'
+import type { Link, PhotoSrc } from './types'
 
 export type Talk = {
   conference: string
@@ -7,9 +8,9 @@ export type Talk = {
   role: string
   year?: string
   title?: string
-  /** Photos from src/data/photos.ts. Without them the card stays text only. */
+  /** Without photos the card stays text only. */
   photos?: PhotoSrc[]
-  links?: { label: string; href: string }[]
+  links?: Link[]
 }
 
 // Newest first.
@@ -20,7 +21,7 @@ export const talks: Talk[] = [
     role: 'Speaker',
     year: '2026',
     photos: photos.dgfc7,
-    title: 'An Evaluation of Fine-Tuned Open-Source and Commercial LLMs for URL-Based Phishing Detection',
+    title: thesis.title,
     links: [{ label: 'recording', href: 'https://www.youtube.com/watch?v=rJUYG58gvBQ' }],
   },
   {

@@ -1,6 +1,7 @@
 import { educationTree, thesis } from '../data/thesis'
 import { Panel } from './Panel'
 import { Section } from './Section'
+import { TextLink } from './TextLink'
 
 const label = 'text-[14px] font-bold text-amt'
 const row = 'grid gap-x-6 gap-y-1 lg:grid-cols-[14ch_1fr]'
@@ -33,15 +34,9 @@ export function Thesis() {
               <span className={label}>SEE ALSO</span>
               <p className="flex gap-6">
                 {thesis.seeAlso.map((link) => (
-                  <a
-                    key={link.href}
-                    className="text-amt underline underline-offset-4"
-                    href={link.href}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
+                  <TextLink key={link.href} href={link.href}>
                     {link.label}
-                  </a>
+                  </TextLink>
                 ))}
               </p>
             </div>

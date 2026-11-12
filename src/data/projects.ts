@@ -1,3 +1,6 @@
+import { githubRepo } from './profile'
+import type { Link } from './types'
+
 export type Project = {
   name: string
   /** Main stack, shown at the right of the row */
@@ -7,10 +10,10 @@ export type Project = {
   /** Headline outcome, shown large at the top of the README */
   result?: { value: string; label: string }
   tags?: string[]
-  links?: { label: string; href: string }[]
+  links?: Link[]
 }
 
-const repo = (name: string) => ({ label: 'source', href: `https://github.com/DelightAzuogu/${name}` })
+const repo = (name: string): Link => ({ label: 'source', href: githubRepo(name) })
 
 // Facts come from the CV, stacks from each repo's dependencies.
 export const projects: Project[] = [

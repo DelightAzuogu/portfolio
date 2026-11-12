@@ -1,4 +1,4 @@
-import type { PhotoSrc } from '../components/Photo'
+import type { PhotoSrc } from './types'
 import dgfc6a from '../assets/photos/6th-digital-global-future-conference-2025-1.jpg'
 import dgfc6b from '../assets/photos/6th-digital-global-future-conference-2025-2.jpg'
 import dgfc7a from '../assets/photos/7th-digital-global-future-conference-2026-1.jpg'

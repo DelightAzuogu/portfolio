@@ -2,6 +2,7 @@ import { talks } from '../data/talks'
 import { Panel } from './Panel'
 import { Photo } from './Photo'
 import { Section } from './Section'
+import { TextLink } from './TextLink'
 
 export function Talks() {
   return (
@@ -30,15 +31,9 @@ export function Talks() {
                 {talk.links && (
                   <div className="mt-1.5 flex flex-wrap gap-x-5 gap-y-1">
                     {talk.links.map((l) => (
-                      <a
-                        key={l.href}
-                        className="text-amt underline underline-offset-4"
-                        href={l.href}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
+                      <TextLink key={l.href} href={l.href}>
                         {l.label}
-                      </a>
+                      </TextLink>
                     ))}
                   </div>
                 )}

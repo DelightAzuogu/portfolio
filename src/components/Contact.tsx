@@ -2,10 +2,14 @@ import { profile } from '../data/profile'
 import { Button } from './Button'
 import { Section } from './Section'
 
+const mailto = `mailto:${profile.email}`
+/** github.com/name rather than https://github.com/name/ */
+const bare = (url: string) => url.replace(/^https:\/\/(www\.)?/, '').replace(/\/$/, '')
+
 const links = [
-  { label: 'email', text: profile.email, href: `mailto:${profile.email}` },
-  { label: 'github', text: profile.github.replace('https://', ''), href: profile.github },
-  { label: 'linkedin', text: profile.linkedin.replace('https://www.', '').replace(/\/$/, ''), href: profile.linkedin },
+  { label: 'email', text: profile.email, href: mailto },
+  { label: 'github', text: bare(profile.github), href: profile.github },
+  { label: 'linkedin', text: bare(profile.linkedin), href: profile.linkedin },
 ]
 
 export function Contact() {
@@ -15,7 +19,7 @@ export function Contact() {
         Got something to build?
       </p>
       <div className="mt-6 flex lg:mt-8">
-        <Button variant="primary" href={`mailto:${profile.email}`}>
+        <Button variant="primary" href={mailto}>
           send email
         </Button>
       </div>
@@ -26,7 +30,7 @@ export function Contact() {
             <a
               className="min-w-0 break-words hover:text-amt hover:underline hover:underline-offset-4"
               href={link.href}
-              target={link.label === 'email' ? undefined : '_blank'}
+              target={link.href === mailto ? undefined : '_blank'}
               rel="noreferrer"
             >
               {link.text}
